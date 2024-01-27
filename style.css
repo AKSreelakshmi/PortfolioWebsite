@@ -143,8 +143,7 @@ nav {
   height: 100vh;
   background: linear-gradient(
       135deg,
-      rgba(0, 64, 77, 0.9) 0%,
-      rgba(0, 0, 0, 0.8) 100%
+      rgb(213 87 87 / 90%) 0%, rgba(0, 0, 0, 0.8)
     ),
     url("images/landing-page.png") center no-repeat;
   background-size: contain;
@@ -167,8 +166,8 @@ nav {
   font-weight: 400;
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 5s steps(27), blink 1s ease-in-out 7s infinite;
-  width: 27ch;
+  animation: typing 5s steps(50), blink 1s ease-in-out 7s infinite;
+  width: 50ch;
   margin: auto;
   border-right: 4px solid rgba(255, 255, 255, 1);
 }
@@ -195,11 +194,10 @@ nav {
 .main-message h3 {
   font-size: 4rem;
   margin: 1rem 0;
-  color: rgba(249, 105, 14, 1);
+  color: rgb(0 0 0);
   background: linear-gradient(
     to right,
-    rgba(249, 105, 14, 1) 0%,
-    rgba(102, 51, 153, 1) 100%
+    rgb(74 72 72) 0%, rgb(0 0 0) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -218,9 +216,9 @@ nav {
 
 .btn {
   margin: 0 9px;
-  background: rgba(3, 155, 155);
+  background: rgb(122 110 120);
   border-radius: 2rem;
-  color: #fafafa;
+  color: #000000;
   padding: 1rem 2.5rem;
   display: inline-block;
   margin-top: 2rem;
@@ -290,8 +288,7 @@ hr {
   margin: 4rem 0;
   background: linear-gradient(
     to right,
-    rgba(249, 105, 14, 1) 0%,
-    rgba(102, 51, 153, 1) 100%
+    rgb(213 87 87 / 90%) 0%, rgba(213 87 87 / 90%)
   );
   border: 0;
   height: 1px;
@@ -327,8 +324,7 @@ hr {
   margin: 2rem 0;
   background: linear-gradient(
     to right,
-    rgba(249, 105, 14, 1) 0%,
-    rgba(102, 51, 153, 1) 100%
+    rgb(213 87 87 / 90%) 0%, rgba(213 87 87 / 90%)
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -339,30 +335,245 @@ hr {
   font-size: 1.4rem;
 }
 
-.contact {
-  width: 100%;
-  min-height: 100vh;
-  max-width: 70rem;
-  margin: auto;
-  padding-top: 5rem;
-}
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:400,700&display=swap');
 
-.contact h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 5rem;
-}
-
-.contact p {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.4rem;
+* {
+  margin: 0;
   padding: 0;
-  margin: 0.9rem 2rem;
+  box-sizing: border-box;
 }
 
-.contact .container {
-  min-height: 50vh;
+.contact {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  flex-direction: column; 
+  position: relative;
+  background: linear-gradient(
+      135deg,
+      rgb(0, 0, 0, 0.8), rgb(213 87 87 /90%)
+    ),
+    url("images/landing-page.png") center no-repeat;
+  background-size: cover;
+}
+
+.contact-header {
+  font-family: "Montserrat", sans-serif;
+  margin: 10rem 10rem 3rem 10rem;
+  text-align: center;
+}
+
+#co-title {
+  font-size: 10rem;
+  font-weight: 1000;
+  color: rgb(213 87 87 /90%);
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+#co-text {
+  font-size: 3rem;
+  color: white;
+  padding-bottom: 2rem;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  line-height: 2;
+  height: auto;
+  width: 70%;
+  background-color: rgba(0,0,0,0.6);
+  margin-bottom: 10rem;
+}
+
+.contact-form {
+  font-family: "Montserrat", sans-serif;
+  padding: 5rem;
+}
+
+#form-title {
+  color: #fff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  line-height: 1px;
+  margin-left: 4rem;
+  margin-bottom: 3rem;
+}
+
+fieldset {
+  border: none;
+}
+
+.form-field {
+  outline: none;
+  width: 200%;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.09);
+    margin-bottom: .9rem;
+}
+
+#name, #email, #subject, #message {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  outline: none;
+  background: transparent;
+  border: none;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding-bottom: 0.7rem;
+}
+
+textarea, #message {
+  width: 100%;
+  color: #fff;
+  overflow: visible;
+}
+
+#form-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 200%;
+  height: 60px;
+  background-color: #c31432;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+#form-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2.5%);
+  box-shadow: 0 0 15px 0 #000;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 5rem;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.contact-info h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: rgb(213 87 87 /90%);
+}
+
+.contact-info a {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  line-height: 3rem;
+  margin-bottom: 5rem;
+  transition: all .3s ease;
+}
+
+.contact-info a:hover {
+  transform: translateY(-2.5%);
+  color: #999;
+}
+
+.contact-info .fab {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  padding-left: 2rem;
+  color: #666;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.fab:hover{
+  transform: scale(1.2);
+  color: #999;
+}
+
+
+@media screen and (max-width: 960px) {
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-field {
+    width: 100%;
+  }
+  
+  #form-btn {
+    width: 100%;
+  }
+  
+  #form-title {
+    margin: 3rem auto;
+  }
+  
+  .contact-header{
+    margin: 5rem 5rem 3rem 5rem;
+  }
+  
+  #co-title {
+    font-size: 1rem;
+  }
+  
+  #co-text {
+    font-size: 2.5rem;
+  }
+  
+  .contact-form {
+    padding: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .form-field {
+    width: 125%;
+  }
+  
+  #form-title {
+    margin: 3rem auto;
+  }
+  
+  #form-btn {
+    width: 125%;
+  }
+  
+  .contact-header{
+    margin: 7rem 7rem 3rem 7rem;
+  }
+  
+  .contact-info {
+    padding: 5rem;
+  }
+  
+  #co-title {
+    font-size: 2rem;
+  }
+  
+  #co-text {
+    font-size: 2.5rem;
+  }
+  
+  .contact-form {
+    padding: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1460px) {
+  .form-field {
+    width: 200%;
+  }
+  
+  #form-btn {
+    width: 200%;
+  }
 }
